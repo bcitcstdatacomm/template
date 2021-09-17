@@ -15,10 +15,8 @@
  *  along with dc_dump.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-
 #include "common.h"
 #include <stdlib.h>
-
 
 int main(void)
 {

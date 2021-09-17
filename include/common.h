@@ -1,7 +1,6 @@
 #ifndef TEMPLATE_COMMON_H
 #define TEMPLATE_COMMON_H
 
-
 /*
  * This file is part of dc_dump.
  *
@@ -19,7 +18,6 @@
  *  along with dc_dump.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-
 /**
  * A function to be documented.
  *
@@ -28,5 +26,4 @@
  */
 int display(const char *str);
 
-
-#endif //TEMPLATE_COMMON_H
+#endif // TEMPLATE_COMMON_H
