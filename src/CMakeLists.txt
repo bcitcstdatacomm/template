@@ -10,7 +10,7 @@ IF (LINT)
 ENDIF ()
 
 # Make an executable
-add_executable(template ${SOURCE_LIST} ${MAIN_SOURCE} ${HEADER_LIST})
+add_executable(template ${COMMON_SOURCE_LIST}  ${MAIN_SOURCE} ${HEADER_LIST})
 
 # We need this directory, and users of our library will need it too
 target_include_directories(template PRIVATE ../include)
@@ -30,9 +30,15 @@ find_library(LIBM m REQUIRED)
 find_library(LIBSOCKET socket)
 find_library(LIBDC_ERROR dc_error REQUIRED)
 find_library(LIBDC_POSIX dc_posix REQUIRED)
+find_library(LIBDC_UTIL dc_util REQUIRED)
+find_library(LIBDC_FSM dc_fsm REQUIRED)
+find_library(LIBDC_APPLICATION dc_application REQUIRED)
 target_link_libraries(template PRIVATE ${LIBM})
 target_link_libraries(template PRIVATE ${LIBDC_ERROR})
 target_link_libraries(template PRIVATE ${LIBDC_POSIX})
+target_link_libraries(template PRIVATE ${LIBDC_UTIL})
+target_link_libraries(template PRIVATE ${LIBDC_FSM})
+target_link_libraries(template PRIVATE ${LIBDC_APPLICATION})
 
 set_target_properties(template PROPERTIES OUTPUT_NAME "template")
 install(TARGETS template DESTINATION bin)
@@ -49,6 +55,6 @@ add_custom_target(
         COMMAND clang-format
         -i
         ${HEADER_LIST}
-        ${SOURCE_LIST}
+        ${COMMON_SOURCE_LIST}
         ${MAIN_SOURCE}
 )

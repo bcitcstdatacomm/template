@@ -12,7 +12,7 @@ set(HEADER_LIST
         "${template_SOURCE_DIR}/include/common.h"
         )
 
-set(SOURCE_LIST
+set(COMMON_SOURCE_LIST
         "${template_SOURCE_DIR}/src/common.c"
         )
 
